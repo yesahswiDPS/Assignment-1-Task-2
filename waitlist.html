@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Waitlist - TechFlow</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">TechFlow</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="waitlist.html" class="active">Join Waitlist</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="waitlist">
+            <div class="waitlist-header">
+                <h1>Join Our Exclusive Waitlist</h1>
+                <p class="subtitle">Be among the first to experience the future of AI-powered productivity</p>
+            </div>
+
+            <div class="waitlist-container">
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Early Access</h3>
+                        <p>Get priority access to our platform before public release</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-gift"></i>
+                        <h3>Special Perks</h3>
+                        <p>Exclusive features and benefits for early adopters</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-comments"></i>
+                        <h3>Direct Support</h3>
+                        <p>Direct line to our development team for feedback</p>
+                    </div>
+                </div>
+
+                <form id="waitlistForm" onsubmit="handleWaitlist(event)" class="waitlist-form">
+                    <div class="form-group">
+                        <label for="waitlistEmail">Email Address</label>
+                        <input type="email" id="waitlistEmail" required placeholder="Enter your email address">
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="radio" id="updates" name="updates" required>
+                        <label for="updates">Yes, I want to receive product updates and announcements</label>
+                    </div>
+                    <button type="submit" class="cta-button">Join the Waitlist</button>
+                    <p class="form-note">We respect your privacy and will never share your information.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function handleWaitlist(event) {
+            event.preventDefault();
+            const email = document.getElementById('waitlistEmail').value;
+            const updates = document.getElementById('updates').checked;
+            alert(`Email: ${email}\nReceive Updates: ${updates ? 'Yes' : 'No'}`);
+            event.target.reset();
+        }
+    </script>
+</body>
+</html> 
